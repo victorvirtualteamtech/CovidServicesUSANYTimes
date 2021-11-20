@@ -8,6 +8,23 @@ https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-states.csv
 
 The data is stored in the laravel cache and then filters are applied with php's own functions.
 
+## Docker
+
+** Run Local **
+
+### Docker Build: The following command is run once to generate the APP_ENVIRONMENT image (local, dev, prod)
+
+```python
+docker build . -t covid-back  --build-arg APP_ENVIRONMENT=local -f Dockerfile
+```
+
+
+### RUN: To run LOCAL
+```python
+docker run --rm --name=covid-back --env APP_ENVIRONMENT=local -v $PWD:/var/www/html/symfony -p 8000:80/tcp covid-back
+```
+
+
 ## Author
 
 Victor M Suarez (victor@virtualteamtech.com ; victormst@gmail.com)
