@@ -28,5 +28,6 @@ use App\Http\Controllers\API\CovidController;
 
 
 Route::get('covidLoadData/', [CovidController::class, 'loadDataFromNyTimes']);
+Route::get('covidStates/', [CovidController::class, 'states']);
 Route::post('covid/', [CovidController::class, 'covidFilters']);
 
